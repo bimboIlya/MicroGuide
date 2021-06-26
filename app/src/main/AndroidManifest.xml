@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.microguide">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MicroGuide">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".mvp.ui.MvpActivity" />
+        <activity android:name=".mvp.ui.MvpRxActivity" />
+        <activity android:name=".mvvm.ui.MvvmActivity" />
+        <activity android:name=".udf.var1.ui.UdfActivity" />
+        <activity android:name=".udf.var2.ui.Udf2Activity" />
+
+    </application>
+
+</manifest>
