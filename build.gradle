@@ -3,7 +3,7 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -13,10 +13,16 @@ buildscript {
     }
 }
 
+plugins {
+    // создает gradle task (вкладки справа), с помощью которого можно
+    // проверить, какие нынче актуальные версии зависимостей
+    id 'com.github.ben-manes.versions' version '0.39.0'
+}
+
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 

@@ -1,25 +1,29 @@
 ext {
     versions = [
-            "AGP"          : "4.1.3",
+            "AGP"          : "7.0.0-beta03",
 
             "kotlin"       : "1.5.10",
-            "coroutines"   : "1.5.0",
+            "coroutines"   : "1.5.1",
 
-            "androidx"     : ["core"      : "1.5.0",
+            "androidx"     : ["core"      : "1.6.0",
                               "activity"  : "1.2.3",
                               "appcompat" : "1.3.0",
                               "constraint": "2.0.4"],
 
-            "material"     : "1.3.0",
+            "material"     : "1.4.0",
+
+            "compose"      : ["core"     : "1.0.0-rc02",
+                              "activity" : "1.3.0-rc02",
+                              "viewmodel": "1.0.0-alpha07"],
 
             "hilt"         : "2.37",
-            "lifecycle"    : "2.4.0-alpha01",
+            "lifecycle"    : "2.4.0-alpha02",
 
             "retrofit"     : "2.9.0",
             "okhttpLogging": "4.9.1",
 
             "rx"           : ["android": "2.1.1",
-                              "kotlin" : "2.3.0"],
+                              "kotlin" : "2.4.0"],
 
             "timber"       : "4.7.1",
 
