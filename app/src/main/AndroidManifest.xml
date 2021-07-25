@@ -29,6 +29,9 @@
         <activity android:name=".refactor.step1.ui.Ref1Activity" />
         <activity android:name=".refactor.step2.ui.Ref2Activity" />
         <activity android:name=".refactor.step3.ui.Ref3Activity" />
+        <activity
+            android:name=".refactor.step4.ui.Ref4Activity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
     </application>
 

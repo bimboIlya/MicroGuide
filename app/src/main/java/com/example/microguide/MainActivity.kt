@@ -9,6 +9,7 @@ import com.example.microguide.mvvm.ui.MvvmActivity
 import com.example.microguide.refactor.step1.ui.Ref1Activity
 import com.example.microguide.refactor.step2.ui.Ref2Activity
 import com.example.microguide.refactor.step3.ui.Ref3Activity
+import com.example.microguide.refactor.step4.ui.Ref4Activity
 import com.example.microguide.udf.var1.ui.UdfActivity
 import com.example.microguide.udf.var2.ui.Udf2Activity
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,5 +37,6 @@ class MainActivity : AppCompatActivity() {
         ref1Button.setOnClickListener { Ref1Activity.start(this@MainActivity) }
         ref2Button.setOnClickListener { Ref2Activity.start(this@MainActivity) }
         ref3Button.setOnClickListener { Ref3Activity.start(this@MainActivity) }
+        ref4Button.setOnClickListener { Ref4Activity.start(this@MainActivity) }
     }
 }

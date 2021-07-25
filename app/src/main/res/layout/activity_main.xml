@@ -89,10 +89,20 @@
         android:layout_height="wrap_content"
         android:text="REF3"
         app:layout_constraintBottom_toBottomOf="@id/ref1Button"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ref4Button"
         app:layout_constraintStart_toEndOf="@id/ref2Button"
         app:layout_constraintTop_toTopOf="@id/ref1Button"
         tools:ignore="HardcodedText" />
 
+    <Button
+        android:id="@+id/ref4Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REF4"
+        app:layout_constraintBottom_toBottomOf="@id/ref1Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ref3Button"
+        app:layout_constraintTop_toTopOf="@id/ref3Button"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
