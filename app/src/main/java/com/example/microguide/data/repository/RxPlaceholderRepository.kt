@@ -7,7 +7,6 @@ import com.example.microguide.data.network.RxPlaceholderApi
 import io.reactivex.Single
 import io.reactivex.rxkotlin.Singles
 import io.reactivex.schedulers.Schedulers
-import kotlinx.coroutines.Dispatchers
 import java.io.IOException
 import javax.inject.Inject
 
@@ -18,6 +17,8 @@ interface RxPlaceholderRepository {
     fun getUserByPostId(postId: Int): Single<UserModel>
 
     fun getCommentsByPostsId(id: Int, idd: Int): Single<List<CommentModel>>
+
+    fun getCommentsByPostId(postId: Int): Single<List<CommentModel>>
 
     fun loadWithError(): Single<Any>
 }
@@ -54,6 +55,10 @@ class RxPlaceholderRepositoryImpl @Inject constructor(
         ) { firstChunk, secondChunk ->
             firstChunk + secondChunk
         }
+            .subscribeOn(Schedulers.io())
+
+    override fun getCommentsByPostId(postId: Int): Single<List<CommentModel>> =
+        api.getCommentsByPostId(postId)
             .subscribeOn(Schedulers.io())
 
     override fun loadWithError(): Single<Any> =

@@ -26,6 +26,7 @@
         <activity android:name=".mvvm.ui.MvvmActivity" />
         <activity android:name=".udf.var1.ui.UdfActivity" />
         <activity android:name=".udf.var2.ui.Udf2Activity" />
+        <activity android:name=".refactor.step1.ui.Ref1Activity" />
 
     </application>
 

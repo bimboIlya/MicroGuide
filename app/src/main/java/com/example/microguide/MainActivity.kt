@@ -1,11 +1,12 @@
 package com.example.microguide
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.microguide.databinding.ActivityMainBinding
 import com.example.microguide.mvp.ui.MvpActivity
 import com.example.microguide.mvp.ui.MvpRxActivity
 import com.example.microguide.mvvm.ui.MvvmActivity
+import com.example.microguide.refactor.step1.ui.Ref1Activity
 import com.example.microguide.udf.var1.ui.UdfActivity
 import com.example.microguide.udf.var2.ui.Udf2Activity
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,5 +31,6 @@ class MainActivity : AppCompatActivity() {
         mvvmButton.setOnClickListener { MvvmActivity.start(this@MainActivity) }
         udfButton.setOnClickListener { UdfActivity.start(this@MainActivity) }
         udf2Button.setOnClickListener { Udf2Activity.start(this@MainActivity) }
+        ref1Button.setOnClickListener { Ref1Activity.start(this@MainActivity) }
     }
 }
