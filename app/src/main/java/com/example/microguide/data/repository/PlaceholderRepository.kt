@@ -17,6 +17,8 @@ interface PlaceholderRepository {
 
     suspend fun getCommentsByPostsId(id: Int, idd: Int): List<CommentModel>
 
+    suspend fun getCommentsByPostId(id: Int) : List<CommentModel>
+
     suspend fun loadWithError()
 
     suspend fun getUserById(userId: Int): UserModel
@@ -76,6 +78,10 @@ class PlaceholderRepositoryImpl @Inject constructor(
         val secondCommentChunkDeferred = async { api.getCommentsByPostId(idd) }
 
         return@withContext firstCommentChunkDeferred.await() + secondCommentChunkDeferred.await()
+    }
+
+    override suspend fun getCommentsByPostId(id: Int): List<CommentModel> = withContext(dispatcher) {
+        api.getCommentsByPostId(id)
     }
 
     override suspend fun loadWithError() {
