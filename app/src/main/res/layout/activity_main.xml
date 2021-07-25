@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MVP"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/mvpRxButton"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/mvvmButton"
+        app:layout_constraintEnd_toStartOf="@id/mvpRxButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -22,10 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RX MVP"
-        app:layout_constraintTop_toTopOf="@id/mvpButton"
         app:layout_constraintBottom_toBottomOf="@id/mvpButton"
-        app:layout_constraintStart_toEndOf="@id/mvpButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mvpButton"
+        app:layout_constraintTop_toTopOf="@id/mvpButton"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -33,10 +33,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MVVM"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mvpButton"
         app:layout_constraintBottom_toTopOf="@id/udfButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mvpButton"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -44,9 +44,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="UDF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/udf2Button"
         app:layout_constraintBottom_toTopOf="@id/ref1Button"
+        app:layout_constraintEnd_toStartOf="@id/udf2Button"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mvvmButton"
         tools:ignore="HardcodedText" />
 
@@ -55,10 +55,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="UDF 2"
+        app:layout_constraintBottom_toBottomOf="@id/udfButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/udfButton"
         app:layout_constraintTop_toTopOf="@id/udfButton"
-        app:layout_constraintBottom_toBottomOf="@id/udfButton"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -66,10 +66,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REF1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/udfButton"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ref2Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/udfButton"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/ref2Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REF2"
+        app:layout_constraintBottom_toBottomOf="@id/ref1Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ref1Button"
+        app:layout_constraintTop_toTopOf="@id/ref1Button"
         tools:ignore="HardcodedText" />
 
 
