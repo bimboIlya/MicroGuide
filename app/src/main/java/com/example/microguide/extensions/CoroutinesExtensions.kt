@@ -2,16 +2,17 @@ package com.example.microguide.extensions
 
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
 inline fun CoroutineScope.launchCatching(
     crossinline onError: (Throwable) -> Unit,
-    crossinline block: suspend () -> Unit
+    crossinline block: suspend CoroutineScopei.() -> Unit
 ) {
     this.launch {
         try {
-            block()
+            coroutineScope { block() }
         } catch (e: CancellationException) {
             // Без этого catch сломается механизм отмены корутин и т.н. паттерн structured concurrency
             throw e

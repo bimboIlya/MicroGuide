@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.microguide.data.repository.PlaceholderRepository
 import com.example.microguide.extensions.SingleMutableEvent
 import com.example.microguide.extensions.invoke
-import com.example.microguide.extensions.launchCatching
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.Flowable
 import io.reactivex.subjects.BehaviorSubject
@@ -81,10 +80,6 @@ class MyViewModel @Inject constructor(
     val errorEvent = _errorEvent.asSharedFlow()
 
     fun loadUser() {
-        loadUserInternal()
-    }
-
-    private fun loadUserInternal() {
         viewModelScope.launchCatching(::handleError) {
             _isLoading.value = true
 
@@ -131,7 +126,7 @@ class MyViewModel @Inject constructor(
     fun retry() {
         _isError.value = false
 
-        loadUserInternal()
+        loadUser()
     }
 
     private fun handleError(error: Throwable) {
