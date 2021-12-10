@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.microguide.data.repository.PlaceholderRepository
 import com.example.microguide.extensions.SingleMutableEvent
 import com.example.microguide.extensions.invoke
+import com.example.microguide.extensions.launchCatching
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.Flowable
 import io.reactivex.subjects.BehaviorSubject

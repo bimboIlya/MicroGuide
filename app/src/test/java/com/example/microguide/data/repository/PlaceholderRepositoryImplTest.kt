@@ -7,7 +7,7 @@ import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.coVerifyAll
 import io.mockk.mockk
-import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
 import java.io.IOException
@@ -25,14 +25,14 @@ class PlaceholderRepositoryImplTest {
     private val postModel = PostModel(userId = 1, id = 1, title = "poop", body = "omegapoop")
 
     @Test
-    fun `get post by id EXPECT post from api`() = testRule.runBlockingTest {
+    fun `get post by id EXPECT post from api`() = runTest {
         repository.getPostById(42)
 
         coVerify { api.getPostById(42) }
     }
 
     @Test
-    fun `get user by post id EXPECT post from api`() = testRule.runBlockingTest {
+    fun `get user by post id EXPECT post from api`() = runTest {
         coEvery { api.getPostById(42) } returns postModel
 
         repository.getUserByPostId(42)
@@ -41,7 +41,7 @@ class PlaceholderRepositoryImplTest {
     }
 
     @Test
-    fun `get comments by post ids EXPECT comments from api`() = testRule.runBlockingTest {
+    fun `get comments by post ids EXPECT comments from api`() = runTest {
         coEvery { api.getCommentsByPostId(any()) } returns emptyList()
 
         repository.getCommentsByPostsId(1, 2)
@@ -53,12 +53,12 @@ class PlaceholderRepositoryImplTest {
     }
 
     @Test(expected = IOException::class)
-    fun `load with error EXPECT io exception`() = testRule.runBlockingTest {
+    fun `load with error EXPECT io exception`() = runTest {
         repository.loadWithError()
     }
 
     @Test
-    fun `get user by id EXPECT user from api`() = testRule.runBlockingTest {
+    fun `get user by id EXPECT user from api`() = runTest {
         repository.getUserById(1)
 
         coVerify { api.getUserById(1) }

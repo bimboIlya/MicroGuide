@@ -9,7 +9,7 @@ import com.example.microguide.data.model.UserModel
 import com.example.microguide.data.repository.PlaceholderRepository
 import io.mockk.coEvery
 import io.mockk.mockk
-import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -49,35 +49,35 @@ class Udf2ViewModelTest {
     )
 
     @Test
-    fun `create viewModel EXPECT initial state is Input`() = testRule.runBlockingTest {
+    fun `create viewModel EXPECT initial state is Input`() = runTest {
         viewModel.state.test {
-            assertEquals(ScreenState.Input, expectItem())
+            assertEquals(ScreenState.Input, awaitItem())
         }
     }
 
     @Test
-    fun `get user EXPECT correct order of states`() = testRule.runBlockingTest {
+    fun `get user EXPECT correct order of states`() = runTest {
         coEvery { repository.getUserById(any()) } returns userModel
 
         viewModel.state.test {
             viewModel.getUser("42")
 
-            assertEquals(ScreenState.Input, expectItem())
-            assertEquals(ScreenState.Loading, expectItem())
-            assertEquals(ScreenState.Content(userModel), expectItem())
+            assertEquals(ScreenState.Input, awaitItem())
+            assertEquals(ScreenState.Loading, awaitItem())
+            assertEquals(ScreenState.Content(userModel), awaitItem())
         }
     }
 
     @Test
-    fun `get user unsuccessful EXPECT correct order of states`() = testRule.runBlockingTest {
+    fun `get user unsuccessful EXPECT correct order of states`() = runTest {
         coEvery { repository.getUserById(any()) } throws IOException()
 
         viewModel.state.test {
             viewModel.getUser("42")
 
-            assertEquals(ScreenState.Input, expectItem())
-            assertEquals(ScreenState.Loading, expectItem())
-            assertEquals(ScreenState.Error, expectItem())
+            assertEquals(ScreenState.Input, awaitItem())
+            assertEquals(ScreenState.Loading, awaitItem())
+            assertEquals(ScreenState.Error, awaitItem())
         }
     }
 

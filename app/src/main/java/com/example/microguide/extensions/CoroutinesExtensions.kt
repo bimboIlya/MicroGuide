@@ -8,7 +8,7 @@ import timber.log.Timber
 
 inline fun CoroutineScope.launchCatching(
     crossinline onError: (Throwable) -> Unit,
-    crossinline block: suspend CoroutineScopei.() -> Unit
+    crossinline block: suspend CoroutineScope.() -> Unit
 ) {
     this.launch {
         try {

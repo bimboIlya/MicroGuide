@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.microguide"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -46,7 +46,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion versions.compose.core
+        kotlinCompilerExtensionVersion versions.compose
     }
 }
 
@@ -65,15 +65,15 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
 
-    implementation "androidx.compose.ui:ui:$versions.compose.core"
-    implementation "androidx.compose.ui:ui-tooling:$versions.compose.core"
-    implementation "androidx.compose.foundation:foundation:$versions.compose.core"
-    implementation "androidx.compose.material:material:$versions.compose.core"
-    implementation "androidx.compose.material:material-icons-core:$versions.compose.core"
-    implementation "androidx.compose.material:material-icons-extended:$versions.compose.core"
+    implementation "androidx.compose.ui:ui:$versions.compose"
+    implementation "androidx.compose.ui:ui-tooling:$versions.compose"
+    implementation "androidx.compose.foundation:foundation:$versions.compose"
+    implementation "androidx.compose.material:material:$versions.compose"
+    implementation "androidx.compose.material:material-icons-core:$versions.compose"
+    implementation "androidx.compose.material:material-icons-extended:$versions.compose"
 
-    implementation "androidx.activity:activity-compose:$versions.compose.activity"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$versions.compose.viewmodel"
+    implementation "androidx.activity:activity-compose:$versions.androidx.activity"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$versions.lifecycle"
 
     implementation "com.google.dagger:hilt-android:$versions.hilt"
     kapt "com.google.dagger:hilt-compiler:$versions.hilt"

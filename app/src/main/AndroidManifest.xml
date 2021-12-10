@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MicroGuide">
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,16 +23,33 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".mvp.ui.MvpActivity" />
-        <activity android:name=".mvp.ui.MvpRxActivity" />
-        <activity android:name=".mvvm.ui.MvvmActivity" />
-        <activity android:name=".udf.var1.ui.UdfActivity" />
-        <activity android:name=".udf.var2.ui.Udf2Activity" />
-        <activity android:name=".refactor.step1.ui.Ref1Activity" />
-        <activity android:name=".refactor.step2.ui.Ref2Activity" />
-        <activity android:name=".refactor.step3.ui.Ref3Activity" />
+        <activity
+            android:name=".mvp.ui.MvpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvp.ui.MvpRxActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.ui.MvvmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".udf.var1.ui.UdfActivity"
+            android:exported="false" />
+        <activity
+            android:name=".udf.var2.ui.Udf2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".refactor.step1.ui.Ref1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".refactor.step2.ui.Ref2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".refactor.step3.ui.Ref3Activity"
+            android:exported="false" />
         <activity
             android:name=".refactor.step4.ui.Ref4Activity"
+            android:exported="false"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
     </application>
